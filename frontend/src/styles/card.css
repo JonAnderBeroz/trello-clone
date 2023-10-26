@@ -1,0 +1,24 @@
+.card {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  height: auto;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card h3 {
+  font-size: 32px;
+}
+
+.card p {
+  font-size: 18px;
+}
+
+
+.ghost-card {
+  background-color: red;
+  height: var(--ghost-height);
+}
