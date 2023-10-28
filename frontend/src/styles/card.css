@@ -1,24 +1,19 @@
 .card {
-  background-color: white;
-  color: black;
+  background-color: #22272b;
   padding: 20px;
   height: auto;
-  border-radius: 30px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.card h3 {
-  font-size: 32px;
-}
-
-.card p {
-  font-size: 18px;
-}
-
-
 .ghost-card {
   background-color: red;
   height: var(--ghost-height);
+}
+
+.card.hide {
+  transition: transform 0.01s;
+  transform: translateX(-9999px);
 }

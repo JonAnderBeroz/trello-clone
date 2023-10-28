@@ -1,4 +1,4 @@
-import { $$ } from './dom'
+import { $$, $ } from './dom'
 
 function findValidChild ({ element, y }) {
   const children = $$('div', element)
@@ -10,6 +10,7 @@ function findValidChild ({ element, y }) {
       break
     }
   };
+  console.log(element, y, validChild)
   return validChild
 }
 
@@ -32,12 +33,16 @@ function findAndInsertSibling ({ target, currentTarget, element, y }) {
   child.insertAdjacentElement('beforebegin', element)
 }
 
-export function insertNode ({ y, currentTarget, target, element }) {
+export function insertCardNode ({ y, currentTarget, target, element }) {
+  const ghost = $('.ghost-card')
+  if (ghost) {
+    ghost.remove()
+  }
   if (target.className === 'card') {
     insertSibling({ target, element, y })
     return
   }
-  if (target.className === 'cardList') {
+  if (target.className === 'cardList' || target.className === 'ghost-card') {
     findAndInsertSibling({ target, currentTarget, element, y })
     return
   }

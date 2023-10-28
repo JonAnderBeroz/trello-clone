@@ -16,9 +16,18 @@ html {
 :root {
   color-scheme: dark;
   color: CanvasText;
-  background-color: Canvas;
+  background-color: #8f3f65;
 }
 
+body {
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 14px;
+}
 main {
   display: grid;
   grid-template-columns: repeat(2, 272px);
@@ -26,6 +35,8 @@ main {
   width: 100%;
   height: 100vh;
   padding: 20px;
-
 }
 
+.tilt {
+  transform: rotate(45deg);
+}

@@ -1,2 +1,2 @@
-export { insertNode } from './node'
+export { insertCardNode } from './node'
 export { $, $$ } from './dom'

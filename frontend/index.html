@@ -10,26 +10,47 @@
 
 <body>
   <main>
-    <article class="cardList">
-      <div draggable="true" class="card" ondrop="" ondragover="">
-        <h3><u><strong>Patata</strong></u></h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Facilisis mauris sit amet massa vitae tortor condimentum. </p>
-      </div>
-      <div draggable="true" class="card" ondrop="" ondragover="">
-        <h3><u><strong>Patata</strong></u></h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Facilisis mauris sit amet massa vitae tortor condimentum. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis
-          mauris sit amet massa vitae tortor condimentum. </p>
-      </div>
-      <div draggable="true" class="card" ondrop="" ondragover="">
-        <h3><u><strong>Patata</strong></u></h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. </p>
-      </div>
-    </article>
-    <article class="cardList"></article>
+    <section class="cardListWrapper">
+      <h2>List 1</h2>
+      <article style="display: flex; flex-direction: column; gap: 10px;">
+        <ul class="cardList">
+          <div draggable="true" class="card" ondrop="" ondragover="">
+            <h3>Patata 1</h3>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Facilisis mauris sit amet massa vitae tortor condimentum. </p>
+          </div>
+          <div draggable="true" class="card" ondrop="" ondragover="">
+            <h3>Patata 3</h3>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. </p>
+          </div>
+        </ul>
+        <button type="button" class="addButton">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="20" height="20"
+              viewBox="0 0 20 20" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 5l0 14"></path>
+              <path d="M5 12l14 0"></path>
+            </svg>
+          </span>
+          Añada una tarjeta
+        </button>
+      </article>
+    </section>
+    <section class="cardListWrapper">
+      <h2>List 2</h2>
+      <ul class="cardList">
+        <div draggable="true" class="card" ondrop="" ondragover="">
+          <h3>Patata 2</h3>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Facilisis mauris sit amet massa vitae tortor condimentum. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis
+            mauris sit amet massa vitae tortor condimentum. </p>
+        </div>
+      </ul>
+    </section>
   </main>
   <script type="module" src="/src/main.js"></script>
 </body>
