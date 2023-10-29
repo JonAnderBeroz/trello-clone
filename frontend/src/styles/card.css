@@ -1,6 +1,6 @@
 .card {
   background-color: #22272b;
-  padding: 20px;
+  padding: 14px;
   height: auto;
   border-radius: 12px;
   display: flex;
@@ -9,11 +9,65 @@
 }
 
 .ghost-card {
-  background-color: red;
+  border-radius: 12px;
+  background-color: #3334;
   height: var(--ghost-height);
 }
 
 .card.hide {
   transition: transform 0.01s;
   transform: translateX(-9999px);
+}
+
+.card-form {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-form textarea {
+  min-height: 56px;
+  max-height: 162px;
+  form-sizing: content;
+  resize: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #22272b;
+  color: #B6C2CF;
+}
+
+.card-form textarea:focus {
+  outline: none;
+}
+
+.form-controls {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  height: 32px;
+}
+
+.form-controls button {
+  border: none;
+  border-radius: 4px;
+}
+
+.form-controls .add {
+  background-color: #85b8ff;
+  color:black;
+  padding-inline: 10px;
+  width: 100px;
+}
+
+.form-controls .cancel {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+}
+
+.form-controls .cancel:hover {
+  background-color: #A6C5E229;
 }

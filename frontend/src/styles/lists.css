@@ -1,23 +1,18 @@
-.cardListWrapper {
+.card-list-wrapper {
   height: fit-content;
   background-color: #101204;
   border-radius: 12px;
-  padding: 20px 20px 8px 20px;
+  padding: 10px 10px 8px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  box-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #03040480, 0px 0px 1px #03040480;
+  box-shadow: 0 0 0 1px #0000, 0 1px 1px #03040480, 0 0 1px #03040480;
 }
 
-.cardList {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.cardListWrapper .addButton {
+.card-list-wrapper .add-button {
   flex-grow: 1;
   border-radius: 8px;
-  padding: 8px 8px;
+  padding: 8px;
   background-color: transparent;
   border: none;
   color: #adb9c4;
@@ -28,7 +23,18 @@
   gap: 10px;
 }
 
-.cardListWrapper .addButton:hover {
+.card-list-wrapper .add-button:hover {
   background-color: #A6C5E229;
 }
 
+.card-list-wrapper .title {
+  font-size: 14px;
+  padding-left: 15px;
+  padding-top: 8px;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

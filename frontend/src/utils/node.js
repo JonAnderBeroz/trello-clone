@@ -10,7 +10,6 @@ function findValidChild ({ element, y }) {
       break
     }
   };
-  console.log(element, y, validChild)
   return validChild
 }
 
@@ -42,7 +41,7 @@ export function insertCardNode ({ y, currentTarget, target, element }) {
     insertSibling({ target, element, y })
     return
   }
-  if (target.className === 'cardList' || target.className === 'ghost-card') {
+  if (target.className === 'card-list' || target.className === 'ghost-card') {
     findAndInsertSibling({ target, currentTarget, element, y })
     return
   }

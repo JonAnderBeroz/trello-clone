@@ -10,22 +10,33 @@
 
 <body>
   <main>
-    <section class="cardListWrapper">
-      <h2>List 1</h2>
+    <section class="card-list-wrapper">
+      <h2 class="title">List 1</h2>
       <article style="display: flex; flex-direction: column; gap: 10px;">
-        <ul class="cardList">
+        <ul class="card-list">
           <div draggable="true" class="card" ondrop="" ondragover="">
-            <h3>Patata 1</h3>
             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. Facilisis mauris sit amet massa vitae tortor condimentum. </p>
           </div>
           <div draggable="true" class="card" ondrop="" ondragover="">
-            <h3>Patata 3</h3>
             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. </p>
           </div>
         </ul>
-        <button type="button" class="addButton">
+        <form class="card-form">
+          <textarea class="card" name="cardContent" placeholder="Introduzca un título para esta tarjeta..." autofocus></textarea>
+          <section class="form-controls">
+            <button type="submit" class="add">Añadir tarjeta</button>
+            <button type="button" class="cancel">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M18 6l-12 12"></path>
+                <path d="M6 6l12 12"></path>
+              </svg>
+            </button>
+          </section>
+        </form>
+        <button type="button" class="add-button">
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="20" height="20"
               viewBox="0 0 20 20" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -39,17 +50,43 @@
         </button>
       </article>
     </section>
-    <section class="cardListWrapper">
-      <h2>List 2</h2>
-      <ul class="cardList">
-        <div draggable="true" class="card" ondrop="" ondragover="">
-          <h3>Patata 2</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Facilisis mauris sit amet massa vitae tortor condimentum. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis
-            mauris sit amet massa vitae tortor condimentum. </p>
-        </div>
-      </ul>
+    <section class="card-list-wrapper">
+      <h2 class="title">List 2</h2>
+      <article style="display: flex; flex-direction: column; gap: 10px;">
+        <ul class="card-list">
+          <div draggable="true" class="card" ondrop="" ondragover="">
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Facilisis mauris sit amet massa vitae tortor condimentum. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis
+              mauris sit amet massa vitae tortor condimentum. </p>
+          </div>
+        </ul>
+        <form class="card-form">
+          <textarea class="card" name="cardContent" placeholder="Introduzca un título para esta tarjeta..."></textarea>
+          <section class="form-controls">
+            <button type="submit" class="add">Añadir tarjeta</button>
+            <button type="button" class="cancel">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M18 6l-12 12"></path>
+                <path d="M6 6l12 12"></path>
+              </svg>
+            </button>
+          </section>
+        </form>
+        <button type="button" class="add-button">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="20" height="20"
+              viewBox="0 0 20 20" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 5l0 14"></path>
+              <path d="M5 12l14 0"></path>
+            </svg>
+          </span>
+          Añada una tarjeta
+        </button>
+      </article>
     </section>
   </main>
   <script type="module" src="/src/main.js"></script>
