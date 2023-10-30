@@ -33,9 +33,15 @@ function findAndInsertSibling ({ target, currentTarget, element, y }) {
 }
 
 export function insertCardNode ({ y, currentTarget, target, element }) {
+  console.log(target, currentTarget)
   const ghost = $('.ghost-card')
   if (ghost) {
     ghost.remove()
+  }
+  if (target.className === 'card-list-wrapper') {
+    const el = target.children[1].children[0]
+    findAndInsertSibling({ target: el, currentTarget: el, element, y })
+    return
   }
   if (target.className === 'card') {
     insertSibling({ target, element, y })

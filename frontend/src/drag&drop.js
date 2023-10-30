@@ -33,6 +33,7 @@ export function dragEnter (ev, el) {
   if (target.className === 'ghost-card') return
   const data = dataTransfer.getData('text/plain')
   const { height } = JSON.parse(data)
+  console.log(el, height, screenY)
 
   ghostActive = true
   createGhost(el, height, screenY)

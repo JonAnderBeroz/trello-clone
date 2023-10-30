@@ -24,11 +24,13 @@
           </div>
         </ul>
         <form class="card-form">
-          <textarea class="card" name="cardContent" placeholder="Introduzca un título para esta tarjeta..." autofocus></textarea>
+          <textarea class="card" name="cardContent" placeholder="Introduzca un título para esta tarjeta..."></textarea>
           <section class="form-controls">
             <button type="submit" class="add">Añadir tarjeta</button>
-            <button type="button" class="cancel">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <button type="button" class="cancel cancel-card">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M18 6l-12 12"></path>
                 <path d="M6 6l12 12"></path>
@@ -65,8 +67,10 @@
           <textarea class="card" name="cardContent" placeholder="Introduzca un título para esta tarjeta..."></textarea>
           <section class="form-controls">
             <button type="submit" class="add">Añadir tarjeta</button>
-            <button type="button" class="cancel">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <button type="button" class="cancel cancel-card">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M18 6l-12 12"></path>
                 <path d="M6 6l12 12"></path>
@@ -88,6 +92,35 @@
         </button>
       </article>
     </section>
+    <section class="card-list-adder">
+      <form class="list-form">
+        <textarea class="card" name="cardContent" placeholder="Introduzca el titulo de la lista..."></textarea>
+        <section class="form-controls">
+          <button type="submit" class="add">Añadir lista</button>
+          <button type="button" class="cancel cancel-list">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24"
+              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M18 6l-12 12"></path>
+              <path d="M6 6l12 12"></path>
+            </svg>
+          </button>
+        </section>
+      </form>
+    </section>
+    <button type="button" class="add-list-button">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="16" height="16"
+          viewBox="0 0 20 20" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 5l0 14"></path>
+          <path d="M5 12l14 0"></path>
+        </svg>
+      </span>
+      Añada otra lista
+    </button>
   </main>
   <script type="module" src="/src/main.js"></script>
 </body>
