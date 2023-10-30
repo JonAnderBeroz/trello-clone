@@ -10,7 +10,7 @@ function setDragImage (dataTransfer, target) {
   crt.style.position = 'absolute'
   crt.style.top = '-10000px'
   document.body.appendChild(crt)
-  dataTransfer.setDragImage(crt, 120, 120)
+  dataTransfer.setDragImage(crt, crt.offsetWidth / 2, crt.offsetHeight / 2)
 }
 
 export function dragstartHandler (ev) {
@@ -33,7 +33,6 @@ export function dragEnter (ev, el) {
   if (target.className === 'ghost-card') return
   const data = dataTransfer.getData('text/plain')
   const { height } = JSON.parse(data)
-  console.log(el, height, screenY)
 
   ghostActive = true
   createGhost(el, height, screenY)

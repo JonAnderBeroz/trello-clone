@@ -1,7 +1,8 @@
-import { closeCardForm, formSubmited, openCardForm } from './main'
+import { closeCardForm, formSubmited, openCardForm } from './cardForm'
 import { $, addIcon, cancelIcon } from './utils'
 import { dragEnter, dragLeave, dropHandler, dragoverHandler } from './drag&drop'
 
+const $container = $('.card-list-adder')
 const $addButton = $('.add-list-button')
 const $cancelButton = $('.cancel-list')
 const $listForm = $('.list-form')
@@ -10,7 +11,9 @@ function openForm (e) {
   e.preventDefault()
   const sibling = e.currentTarget.previousElementSibling
   sibling.style.display = 'flex'
-  sibling.children[0].children[0].focus()
+  const textArea = sibling.children[0].children[0]
+  textArea.focus()
+  textArea.value = ''
   e.currentTarget.style.display = 'none'
 }
 
@@ -54,24 +57,7 @@ function createAddForm () {
   return addForm
 }
 
-function addList (e) {
-  e.preventDefault()
-  const { value } = e.target[0]
-  console.log(value)
-  const list = document.createElement('section')
-  list.classList.add('card-list-wrapper')
-  const title = document.createElement('h2')
-  title.classList.add('title')
-  title.innerText = value
-  const innerContainer = document.createElement('article')
-  innerContainer.style.display = 'flex'
-  innerContainer.style.flexDirection = 'column'
-  innerContainer.style.gap = '10px'
-  const cardList = document.createElement('ul')
-  cardList.classList.add('card-list')
-
-  const addForm = createAddForm()
-
+function createAddButton () {
   const addButton = document.createElement('button')
   addButton.setAttribute('type', 'button')
   addButton.classList.add('add-button')
@@ -81,6 +67,29 @@ function addList (e) {
 
   iconContainer.appendChild(addIcon())
   addButton.prepend(iconContainer)
+  return addButton
+}
+
+function addList (e) {
+  e.preventDefault()
+  const { value } = e.target[0]
+  const list = document.createElement('section')
+  list.classList.add('card-list-wrapper')
+
+  const title = document.createElement('h2')
+  title.classList.add('title')
+  title.innerText = value
+
+  const innerContainer = document.createElement('article')
+  innerContainer.style.display = 'flex'
+  innerContainer.style.flexDirection = 'column'
+  innerContainer.style.gap = '10px'
+
+  const cardList = document.createElement('ul')
+  cardList.classList.add('card-list')
+
+  const addForm = createAddForm()
+  const addButton = createAddButton()
 
   innerContainer.appendChild(cardList)
   innerContainer.appendChild(addForm)
@@ -92,9 +101,10 @@ function addList (e) {
   list.addEventListener('dragover', (e) => dragoverHandler(e, list))
   list.addEventListener('dragenter', (e) => dragEnter(e, list))
   list.addEventListener('dragleave', (e) => dragLeave(e, list))
-  list.addEventListener('focusout', closeCardForm)
+
   e.target.parentElement.insertAdjacentElement('beforebegin', list)
   e.target[0].focus()
+  e.target[0].value = ''
 }
 
 $addButton.addEventListener('click', openForm)

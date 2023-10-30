@@ -33,7 +33,6 @@ function findAndInsertSibling ({ target, currentTarget, element, y }) {
 }
 
 export function insertCardNode ({ y, currentTarget, target, element }) {
-  console.log(target, currentTarget)
   const ghost = $('.ghost-card')
   if (ghost) {
     ghost.remove()
