@@ -9,6 +9,7 @@
   flex-direction: column;
   gap: 15px;
   box-shadow: 0 0 0 1px #0000, 0 1px 1px #03040480, 0 0 1px #03040480;
+  cursor: pointer;
 }
 
 .card-list-wrapper .add-button {
@@ -74,6 +75,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  list-style: none;
 }
 
 .add-list-button {

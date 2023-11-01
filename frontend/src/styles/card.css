@@ -6,7 +6,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  cursor: pointer;
+}
+
+.card:hover {
+  outline: 2px solid #0060df;
 }
 
 .ghost-card {
@@ -16,8 +19,8 @@
 }
 
 .card.hide {
-  transition: transform 0.01s;
-  transform: translateX(-9999px);
+  transition:  0.01s;
+  display: none;
 }
 
 .card-form {

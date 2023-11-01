@@ -1,9 +1,7 @@
-export const $ = (element, node) => {
-  if (node) return node.querySelector(element)
+export const $ = (element) => {
   return document.querySelector(element)
 }
 
-export const $$ = (element, node) => {
-  if (node) return node.querySelectorAll(element)
+export const $$ = (element) => {
   return document.querySelectorAll(element)
 }

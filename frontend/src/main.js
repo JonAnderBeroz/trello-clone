@@ -3,16 +3,17 @@ import { dragEnter, dragLeave, dragstartHandler, dropHandler, dragoverHandler } 
 import { $$ } from './utils'
 import './listForm'
 import './cardForm'
+import './titleForm'
 
 const $$cards = $$('.card')
-const $$cardLists = $$('.card-list')
+const $$cardLists = $$('.card-list-wrapper')
 
 $$cardLists.forEach($cardList => {
+  $cardList.id = `c-${crypto.randomUUID()}`
   $cardList.addEventListener('drop', (e) => dropHandler(e, $cardList))
   $cardList.addEventListener('dragover', (e) => dragoverHandler(e, $cardList))
   $cardList.addEventListener('dragenter', (e) => dragEnter(e, $cardList))
   $cardList.addEventListener('dragleave', (e) => dragLeave(e, $cardList))
-  // $cardList.addEventListener('focusout', closeCardForm)
 })
 
 $$cards?.forEach(($card, i) => {

@@ -4,6 +4,7 @@ let ghostActive = true
 
 function setDragImage (dataTransfer, target) {
   const crt = target.cloneNode(true)
+  crt.id = 'g-image'
   crt.style.transform = 'rotate(10deg)'
   crt.style.height = `${target.offsetHeight}px`
   crt.style.width = `${target.offsetWidth}px`
@@ -15,13 +16,14 @@ function setDragImage (dataTransfer, target) {
 
 export function dragstartHandler (ev) {
   const { dataTransfer, target } = ev
-  setDragImage(dataTransfer, target)
   dataTransfer.setData('text/plain', JSON.stringify({ id: target.id, height: target.offsetHeight }))
+  setDragImage(dataTransfer, target)
+  target.classList.add('hide')
   dataTransfer.dropEffect = 'move'
 }
 
 function createGhost (target, height, y) {
-  const ghostCard = document.createElement('div')
+  const ghostCard = document.createElement('li')
   ghostCard.height = height
   ghostCard.className = 'ghost-card'
   ghostCard.style = `--ghost-height:${height}px`
@@ -53,15 +55,18 @@ export function dragoverHandler (ev) {
 
 export function dropHandler (ev) {
   ev.preventDefault()
+  ev.stopPropagation()
   const ghost = $('.ghost-card')
   if (ghost) {
     ghost.remove()
   }
+  const ghostImage = $('#g-image')
+  ghostImage.remove()
   const data = ev.dataTransfer.getData('text/plain')
   const { id } = JSON.parse(data)
   const { screenY, currentTarget, target } = ev
   const el = $(`#${id}`)
-  el.style.display = 'block'
+  el.classList.remove('hide')
   if (ev.target.className === 'ghost-card') {
     insertCardNode({ y: screenY, currentTarget, target: currentTarget, element: el })
     return

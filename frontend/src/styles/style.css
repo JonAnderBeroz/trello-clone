@@ -1,5 +1,6 @@
 @import url('./card.css');
 @import url('./lists.css');
+@import url('./titleForm.css');
 
 html {
   box-sizing: border-box;

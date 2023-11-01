@@ -9,7 +9,7 @@ export function formSubmited (e) {
     return
   }
   const cardList = e.target.previousElementSibling
-  const card = document.createElement('div')
+  const card = document.createElement('li')
   card.setAttribute('draggable', 'true')
   card.id = `c-${crypto.randomUUID()}`
   card.innerText = value

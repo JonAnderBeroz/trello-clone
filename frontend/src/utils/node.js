@@ -1,9 +1,10 @@
-import { $$, $ } from './dom'
+import { $ } from './dom'
 
 function findValidChild ({ element, y }) {
-  const children = $$('div', element)
+  const children = element.children
   let validChild, computedHeight
   for (const child of children) {
+    if (child.offsetHeight === 0) continue
     computedHeight = child.offsetHeight + child.offsetTop
     if (computedHeight > y) {
       validChild = child
@@ -13,43 +14,27 @@ function findValidChild ({ element, y }) {
   return validChild
 }
 
-function insertSibling ({ target, element, y }) {
-  const computedHeight = target.offsetHeight + target.offsetTop
-  const elementPosition = y - element.offsetHeight
-  if (computedHeight / 2 > elementPosition) {
-    target.insertAdjacentElement('beforebegin', element)
-    return
-  }
-  target.insertAdjacentElement('afterend', element)
-}
-
-function findAndInsertSibling ({ target, currentTarget, element, y }) {
-  const child = findValidChild({ element: target, y })
+function findAndInsertSibling ({ cardList, element, y }) {
+  const child = findValidChild({ element: cardList, y })
   if (!child) {
-    currentTarget.appendChild(element)
+    cardList.appendChild(element)
     return
   }
   child.insertAdjacentElement('beforebegin', element)
 }
 
 export function insertCardNode ({ y, currentTarget, target, element }) {
-  const ghost = $('.ghost-card')
-  if (ghost) {
-    ghost.remove()
+  const $ghost = $('.ghost-card')
+  if ($ghost) {
+    $ghost.remove()
   }
-  if (target.className === 'card-list-wrapper') {
-    const el = target.children[1].children[0]
-    findAndInsertSibling({ target: el, currentTarget: el, element, y })
-    return
+  let id = ''
+  if (target.className !== 'card-list-wrapper') {
+    id = target.closest('.card-list-wrapper').id
+  } else {
+    id = target.id
   }
-  if (target.className === 'card') {
-    insertSibling({ target, element, y })
-    return
-  }
-  if (target.className === 'card-list' || target.className === 'ghost-card') {
-    findAndInsertSibling({ target, currentTarget, element, y })
-    return
-  }
-  const parentNode = target.closest('div')
-  insertSibling({ target: parentNode, element, y })
+  console.log(id)
+  const cardList = $(`#${id} .card-list`)
+  findAndInsertSibling({ cardList, element, y })
 }

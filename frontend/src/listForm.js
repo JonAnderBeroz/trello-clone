@@ -1,8 +1,8 @@
 import { closeCardForm, formSubmited, openCardForm } from './cardForm'
 import { $, addIcon, cancelIcon } from './utils'
 import { dragEnter, dragLeave, dropHandler, dragoverHandler } from './drag&drop'
+import { changeTitle, openTitleForm } from './titleForm'
 
-const $container = $('.card-list-adder')
 const $addButton = $('.add-list-button')
 const $cancelButton = $('.cancel-list')
 const $listForm = $('.list-form')
@@ -74,11 +74,26 @@ function addList (e) {
   e.preventDefault()
   const { value } = e.target[0]
   const list = document.createElement('section')
+  list.id = `c-${crypto.randomUUID()}`
   list.classList.add('card-list-wrapper')
 
   const title = document.createElement('h2')
   title.classList.add('title')
   title.innerText = value
+  title.addEventListener('click', openTitleForm)
+
+  const titleForm = document.createElement('form')
+  titleForm.classList.add('title-form')
+  const input = document.createElement('input')
+  input.setAttribute('type', 'text')
+  titleForm.appendChild(input)
+  titleForm.addEventListener('submit', changeTitle)
+  titleForm.addEventListener('focusout', (e) => {
+    e.preventDefault()
+    const title = titleForm.previousElementSibling
+    titleForm.style.display = 'none'
+    title.style.display = 'block'
+  })
 
   const innerContainer = document.createElement('article')
   innerContainer.style.display = 'flex'
@@ -96,6 +111,7 @@ function addList (e) {
   innerContainer.appendChild(addButton)
 
   list.appendChild(title)
+  list.appendChild(titleForm)
   list.appendChild(innerContainer)
   list.addEventListener('drop', (e) => dropHandler(e, list))
   list.addEventListener('dragover', (e) => dragoverHandler(e, list))
