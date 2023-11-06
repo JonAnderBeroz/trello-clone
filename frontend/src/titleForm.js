@@ -16,6 +16,7 @@ export function openTitleForm (e) {
 export function changeTitle (e) {
   e.preventDefault()
   const { value } = e.target[0]
+  if (!value) return
   const title = e.target.previousElementSibling
   title.innerText = value
   e.target.style.display = 'none'

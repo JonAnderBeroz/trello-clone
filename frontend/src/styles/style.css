@@ -1,6 +1,7 @@
 @import url('./card.css');
 @import url('./lists.css');
 @import url('./titleForm.css');
+@import url('./overlay.css');
 
 html {
   box-sizing: border-box;
@@ -27,11 +28,12 @@ body {
   display: flex;
 }
 
-main {
-  overflow-x: scroll;
+.app {
+  overflow-x: auto;
   display: flex;
   flex-direction: row;
   gap: 20px;
+  width: 100%;
   height: 100vh;
   padding: 20px;
 }

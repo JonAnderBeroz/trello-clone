@@ -3,13 +3,63 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + TS</title>
+  <title>Treclo</title>
 </head>
 
 <body>
-  <main>
+  <!-- Card edit modal -->
+  <section class="overlay">
+    <main class="modal-wrapper">
+      <button type="button" class="close-modal">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24"
+          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M18 6l-12 12"></path>
+          <path d="M6 6l12 12"></path>
+        </svg>
+      </button>
+      <section class="modal-header">
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-bottombar" width="24"
+            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+            <path d="M4 15l16 0"></path>
+          </svg>
+        </span>
+        <textarea class="card-title"></textarea>
+        <p class="parent-element">en la lista -</p>
+      </section>
+      <section class="modal-body">
+        <article class="information">
+          <section class="tags">
+            <h3>Etiquetas</h3>
+            <div class="tag-list">
+              <span class="tag">patatatatatatatatatatata</span>
+              <button class="add-tag">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="20" height="20"
+                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M12 5l0 14"></path>
+                  <path d="M5 12l14 0"></path>
+                </svg>
+              </button>
+            </div>
+          </section>
+        </article>
+        <article class="actions">
+          <p>patata</p>
+        </article>
+      </section>
+    </main>
+  </section>
+  <!-- Card lists -->
+  <main class="app">
     <section class="card-list-wrapper">
       <h2 class="title">List 1</h2>
       <form class="title-form">
@@ -61,8 +111,10 @@
         <ul class="card-list">
           <li draggable="true" class="card" ondrop="" ondragover="">
             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Facilisis mauris sit amet massa vitae tortor condimentum. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis
+              dolore magna aliqua. Facilisis mauris sit amet massa vitae tortor condimentum. Lorem ipsum dolor sit
+              amet,
+              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Facilisis
               mauris sit amet massa vitae tortor condimentum. </p>
           </li>
         </ul>
